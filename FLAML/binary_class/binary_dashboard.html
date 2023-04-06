@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>explainerdashboard</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+<div><H1>Model Explainer</H1></div><ul class="nav nav-tabs" id="myTab" role="tablist">
+<li class="nav-item" role="presentation">
+    <button class="nav-link active" id="myTab0-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab0" role="tab"
+    aria-selected="true" aria-controls="myTab0">Feature Importances</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab1-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab1" role="tab"
+    aria-selected="false" aria-controls="myTab1">Classification Stats</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab2-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab2" role="tab"
+    aria-selected="false" aria-controls="myTab2">Individual Predictions</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab3-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab3" role="tab"
+    aria-selected="false" aria-controls="myTab3">What if...</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab4-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab4" role="tab"
+    aria-selected="false" aria-controls="myTab4">Feature Dependence</button>
+</li>
+
+</ul>
+
+<div class="tab-content" id="myTabContent">
+
+
+<div class="tab-pane active" id="myTab0"
+     role="tabpanel" aria-labelledby="myTab0-tab"> <div></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Feature Importances</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="edc1a49f-3687-4506-a718-a008394aced6" class="plotly-graph-div" style="height:360px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("edc1a49f-3687-4506-a718-a008394aced6")) {                    Plotly.newPlot(                        "edc1a49f-3687-4506-a718-a008394aced6",                        [{"hoverinfo":"text","orientation":"h","x":[0.012517066900596122,0.013265335187687301,0.014379546040738567,0.026766298776323395,0.030685957717520054,0.033592957435208105,0.03910191230084344,0.08034631003966618],"y":["8. BloodPressure","7. Insulin","6. SkinThickness","5. DiabetesPedigreeFunction","4. BMI","3. Age","2. Pregnancies","1. Glucose"],"type":"bar"}],                        {"plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Average impact on predicted Outcome<br>(mean absolute SHAP value)"},"template":{"data":{"scatter":[{"type":"scatter"}]}},"yaxis":{"automargin":true},"xaxis":{"automargin":true,"title":{"text":""}},"height":360,"margin":{"b":40,"l":168,"pad":4,"r":40,"t":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+<div></div>
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab1"
+     role="tabpanel" aria-labelledby="myTab1-tab"> <div></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Model performance metrics</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">metric</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>accuracy</td>
+      <td>0.846</td>
+    </tr>
+    <tr>
+      <td>precision</td>
+      <td>0.75</td>
+    </tr>
+    <tr>
+      <td>recall</td>
+      <td>0.75</td>
+    </tr>
+    <tr>
+      <td>f1</td>
+      <td>0.75</td>
+    </tr>
+    <tr>
+      <td>roc_auc_score</td>
+      <td>0.867</td>
+    </tr>
+    <tr>
+      <td>pr_auc_score</td>
+      <td>0.662</td>
+    </tr>
+    <tr>
+      <td>log_loss</td>
+      <td>0.463</td>
+    </tr>
+
+  </tbody>
+</table>
+    
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Confusion Matrix</h3><h6 class="card-subtitle">How many false positives and false negatives?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="e3f476c2-730e-4e0f-9ad2-e7df9c167b2f" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("e3f476c2-730e-4e0f-9ad2-e7df9c167b2f")) {                    Plotly.newPlot(                        "e3f476c2-730e-4e0f-9ad2-e7df9c167b2f",                        [{"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"hoverinfo":"skip","showscale":false,"x":[" 0"," 1"],"y":[" 0"," 1"],"z":[[61.5,7.7],[7.7,23.1]],"zmax":130,"zmin":0,"type":"heatmap"}],                        {"plot_bgcolor":"#fff","title":{"text":"Confusion Matrix"},"xaxis":{"constrain":"domain","showgrid":false,"tickmode":"array","ticktext":[" 0"," 1"],"tickvals":[" 0"," 1"],"title":{"text":"predicted"}},"yaxis":{"autorange":"reversed","scaleanchor":"x","scaleratio":1,"showgrid":false,"side":"left","tickmode":"array","ticktext":[" 0"," 1"],"tickvals":[" 0"," 1"],"title":{"standoff":20,"text":"observed"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"font":{"size":20},"showarrow":false,"text":"61.5%","x":" 0","y":" 0"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(24)","x":" 0","y":" 0"},{"font":{"size":20},"showarrow":false,"text":"7.7%","x":" 1","y":" 0"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(3)","x":" 1","y":" 0"},{"font":{"size":20},"showarrow":false,"text":"7.7%","x":" 0","y":" 1"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(3)","x":" 0","y":" 1"},{"font":{"size":20},"showarrow":false,"text":"23.1%","x":" 1","y":" 1"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(9)","x":" 1","y":" 1"}],"margin":{"t":40,"b":40,"l":7,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Precision Plot</h3><h6 class="card-subtitle">Does fraction positive increase with predicted probability?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="20f96d2d-39db-4fa4-9645-4820d1f14696" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("20f96d2d-39db-4fa4-9645-4820d1f14696")) {                    Plotly.newPlot(                        "20f96d2d-39db-4fa4-9645-4820d1f14696",                        [{"name":"counts","width":[0.09000000000000001,0.09000000000000001,0.09000000000000004,0.08999999999999998,0.08999999999999998,0.0900000000000001,0.08999999999999998,0.08999999999999998,0.08999999999999998,0.08999999999999998],"x":[0.05,0.15000000000000002,0.25,0.35000000000000003,0.45,0.55,0.6500000000000001,0.75,0.8500000000000001,0.95],"y":[3,9,6,4,5,5,6,0,1,0],"type":"bar"},{"name":"percentage 1","x":[0.085,0.124,0.251,0.351,0.436,0.527,0.632,null,0.823,null],"y":[0.0,0.0,0.167,0.5,0.0,0.8,0.833,null,0.0,null],"yaxis":"y2","type":"scatter"}],                        {"plot_bgcolor":"#fff","shapes":[{"type":"line","x0":0.5,"x1":0.5,"xref":"x","y0":0,"y1":1.0,"yref":"y2"}],"title":{"text":"percentage 1 vs predicted probability"},"xaxis":{"title":{"text":"predicted probability"}},"yaxis":{"title":{"text":"counts"}},"yaxis2":{"overlaying":"y","rangemode":"tozero","side":"right","tickfont":{"color":"rgb(148, 103, 189)"},"title":{"font":{"color":"rgb(148, 103, 189)"},"text":"percentage"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"legend":{"orientation":"h","xanchor":"center","y":-0.2,"x":0.5},"margin":{"t":40,"b":40,"l":40,"r":40},"annotations":[{"text":"cutoff=0.5","x":0.5,"y":0.1,"yref":"y2"}]},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Classification Plot</h3><h6 class="card-subtitle">Distribution of labels above and below cutoff</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="c96bbc65-aa64-4112-a617-d2f8fed8dfeb" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("c96bbc65-aa64-4112-a617-d2f8fed8dfeb")) {                    Plotly.newPlot(                        "c96bbc65-aa64-4112-a617-d2f8fed8dfeb",                        [{"hoverinfo":"text","name":"0","text":["<b>24</b> (88.89%)","<b>3</b> (25.00%)","<b>27</b> (69.23%)"],"textposition":"auto","x":["below cutoff","above cutoff","total"],"y":[88.88888888888889,25.0,69.23076923076923],"type":"bar"},{"hoverinfo":"text","name":"1","text":["<b>3</b> (11.11%)","<b>9</b> (75.00%)","<b>12</b> (30.77%)"],"textposition":"auto","x":["below cutoff","above cutoff","total"],"y":[11.11111111111111,75.0,30.76923076923077],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"text":"Percentage above and below cutoff"},"margin":{"t":40,"b":40,"l":40,"r":40},"barmode":"stack","legend":{"orientation":"h","xanchor":"center","y":-0.2,"x":0.5}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">ROC AUC Plot</h3><h6 class="card-subtitle">Trade-off between False positives and false negatives</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="04c1b0d4-b067-4238-bb68-f89c4a3f6646" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("04c1b0d4-b067-4238-bb68-f89c4a3f6646")) {                    Plotly.newPlot(                        "04c1b0d4-b067-4238-bb68-f89c4a3f6646",                        [{"hoverinfo":"text","mode":"lines","name":"ROC AUC CURVE","text":["threshold: 1.82 <br> FP: 0.00 <br> TP: 0.00","threshold: 0.82 <br> FP: 0.04 <br> TP: 0.00","threshold: 0.65 <br> FP: 0.04 <br> TP: 0.17","threshold: 0.63 <br> FP: 0.07 <br> TP: 0.17","threshold: 0.51 <br> FP: 0.07 <br> TP: 0.75","threshold: 0.42 <br> FP: 0.30 <br> TP: 0.75","threshold: 0.37 <br> FP: 0.30 <br> TP: 0.92","threshold: 0.29 <br> FP: 0.41 <br> TP: 0.92","threshold: 0.27 <br> FP: 0.41 <br> TP: 1.00","threshold: 0.07 <br> FP: 1.00 <br> TP: 1.00"],"x":[0.0,0.037037037037037035,0.037037037037037035,0.07407407407407407,0.07407407407407407,0.2962962962962963,0.2962962962962963,0.4074074074074074,0.4074074074074074,1.0],"y":[0.0,0.0,0.16666666666666666,0.16666666666666666,0.75,0.75,0.9166666666666666,0.9166666666666666,1.0,1.0],"type":"scatter"}],                        {"hovermode":"closest","plot_bgcolor":"#fff","title":{"text":"ROC AUC CURVE"},"xaxis":{"constrain":"domain","range":[0,1],"title":{"text":"False Positive Rate"}},"yaxis":{"constrain":"domain","range":[0,1],"scaleanchor":"x","scaleratio":1,"title":{"text":"True Positive Rate"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"align":"right","showarrow":false,"text":"roc-auc-score: 0.87","x":0.6,"xanchor":"left","y":0.4,"yanchor":"top"},{"align":"right","showarrow":false,"text":"cutoff: 0.50","x":0.6,"xanchor":"left","y":0.35,"yanchor":"top"},{"align":"right","showarrow":false,"text":"TPR: 0.75","x":0.6,"xanchor":"left","y":0.3,"yanchor":"top"},{"align":"right","showarrow":false,"text":"FPR: 0.07","x":0.6,"xanchor":"left","y":0.24,"yanchor":"top"}],"shapes":[{"line":{"color":"darkslategray","dash":"dot","width":4},"type":"line","x0":0,"x1":1,"xref":"x","y0":0,"y1":1,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0,"x1":1,"xref":"x","y0":0.75,"y1":0.75,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0.07407407407407407,"x1":0.07407407407407407,"xref":"x","y0":0,"y1":1,"yref":"y"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">PR AUC Plot</h3><h6 class="card-subtitle">Trade-off between Precision and Recall</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="89c296c0-cfb8-4651-9c63-54d81a1f97a4" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("89c296c0-cfb8-4651-9c63-54d81a1f97a4")) {                    Plotly.newPlot(                        "89c296c0-cfb8-4651-9c63-54d81a1f97a4",                        [{"hoverinfo":"text","mode":"lines","name":"PR AUC CURVE","text":["threshold: 0.07 <br>precision: 0.31 <br>recall: 1.00","threshold: 0.09 <br>precision: 0.32 <br>recall: 1.00","threshold: 0.09 <br>precision: 0.32 <br>recall: 1.00","threshold: 0.10 <br>precision: 0.33 <br>recall: 1.00","threshold: 0.10 <br>precision: 0.34 <br>recall: 1.00","threshold: 0.11 <br>precision: 0.35 <br>recall: 1.00","threshold: 0.12 <br>precision: 0.36 <br>recall: 1.00","threshold: 0.12 <br>precision: 0.38 <br>recall: 1.00","threshold: 0.12 <br>precision: 0.39 <br>recall: 1.00","threshold: 0.14 <br>precision: 0.40 <br>recall: 1.00","threshold: 0.14 <br>precision: 0.41 <br>recall: 1.00","threshold: 0.16 <br>precision: 0.43 <br>recall: 1.00","threshold: 0.21 <br>precision: 0.44 <br>recall: 1.00","threshold: 0.22 <br>precision: 0.46 <br>recall: 1.00","threshold: 0.25 <br>precision: 0.48 <br>recall: 1.00","threshold: 0.27 <br>precision: 0.50 <br>recall: 1.00","threshold: 0.27 <br>precision: 0.52 <br>recall: 1.00","threshold: 0.29 <br>precision: 0.50 <br>recall: 0.92","threshold: 0.31 <br>precision: 0.52 <br>recall: 0.92","threshold: 0.34 <br>precision: 0.55 <br>recall: 0.92","threshold: 0.37 <br>precision: 0.58 <br>recall: 0.92","threshold: 0.38 <br>precision: 0.56 <br>recall: 0.83","threshold: 0.42 <br>precision: 0.53 <br>recall: 0.75","threshold: 0.43 <br>precision: 0.56 <br>recall: 0.75","threshold: 0.44 <br>precision: 0.60 <br>recall: 0.75","threshold: 0.44 <br>precision: 0.64 <br>recall: 0.75","threshold: 0.46 <br>precision: 0.69 <br>recall: 0.75","threshold: 0.50 <br>precision: 0.75 <br>recall: 0.75","threshold: 0.51 <br>precision: 0.82 <br>recall: 0.75","threshold: 0.53 <br>precision: 0.80 <br>recall: 0.67","threshold: 0.54 <br>precision: 0.78 <br>recall: 0.58","threshold: 0.55 <br>precision: 0.75 <br>recall: 0.50","threshold: 0.61 <br>precision: 0.71 <br>recall: 0.42","threshold: 0.62 <br>precision: 0.67 <br>recall: 0.33","threshold: 0.62 <br>precision: 0.60 <br>recall: 0.25","threshold: 0.63 <br>precision: 0.50 <br>recall: 0.17","threshold: 0.65 <br>precision: 0.67 <br>recall: 0.17","threshold: 0.66 <br>precision: 0.50 <br>recall: 0.08","threshold: 0.82 <br>precision: 0.00 <br>recall: 0.00"],"x":[0.3076923076923077,0.3157894736842105,0.32432432432432434,0.3333333333333333,0.34285714285714286,0.35294117647058826,0.36363636363636365,0.375,0.3870967741935484,0.4,0.41379310344827586,0.42857142857142855,0.4444444444444444,0.46153846153846156,0.48,0.5,0.5217391304347826,0.5,0.5238095238095238,0.55,0.5789473684210527,0.5555555555555556,0.5294117647058824,0.5625,0.6,0.6428571428571429,0.6923076923076923,0.75,0.8181818181818182,0.8,0.7777777777777778,0.75,0.7142857142857143,0.6666666666666666,0.6,0.5,0.6666666666666666,0.5,0.0,1.0],"y":[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.8333333333333334,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.6666666666666666,0.5833333333333334,0.5,0.4166666666666667,0.3333333333333333,0.25,0.16666666666666666,0.16666666666666666,0.08333333333333333,0.0,0.0],"type":"scatter"}],                        {"hovermode":"closest","plot_bgcolor":"#fff","title":{"text":"PR AUC CURVE"},"xaxis":{"constrain":"domain","range":[0,1],"title":{"text":"Precision"}},"yaxis":{"constrain":"domain","range":[0,1],"scaleanchor":"x","scaleratio":1,"title":{"text":"Recall"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"align":"right","showarrow":false,"text":"pr-auc-score: 0.66","x":0.15,"xanchor":"left","y":0.4,"yanchor":"top"},{"align":"right","showarrow":false,"text":"cutoff: 0.50","x":0.15,"xanchor":"left","y":0.35,"yanchor":"top"},{"align":"right","showarrow":false,"text":"precision: 0.75","x":0.15,"xanchor":"left","y":0.3,"yanchor":"top"},{"align":"right","showarrow":false,"text":"recall: 0.75","x":0.15,"xanchor":"left","y":0.25,"yanchor":"top"}],"shapes":[{"line":{"color":"lightslategray","width":1},"type":"line","x0":0,"x1":1,"xref":"x","y0":0.75,"y1":0.75,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0.75,"x1":0.75,"xref":"x","y0":0,"y1":1,"yref":"y"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Lift Curve</h3><h6 class="card-subtitle">Performance how much better than random?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="37afc8e9-3986-4d10-88c2-eb578a3feb52" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("37afc8e9-3986-4d10-88c2-eb578a3feb52")) {                    Plotly.newPlot(                        "37afc8e9-3986-4d10-88c2-eb578a3feb52",                        [{"hoverinfo":"text","name":"perfect","text":["0%, 0%","30.77%, 100%","100, 100%"],"x":[0.0,30.76923179626465,100],"y":[0.0,100,100],"type":"scatter"},{"hoverinfo":"text","name":"model","text":["model selected 0.00% of all positives in first 2.56% sampled<br>precision=0.00% positives in sample<br>lift=0.00","model selected 8.33% of all positives in first 5.13% sampled<br>precision=50.00% positives in sample<br>lift=1.62","model selected 16.67% of all positives in first 7.69% sampled<br>precision=66.67% positives in sample<br>lift=2.17","model selected 16.67% of all positives in first 10.26% sampled<br>precision=50.00% positives in sample<br>lift=1.62","model selected 25.00% of all positives in first 12.82% sampled<br>precision=60.00% positives in sample<br>lift=1.95","model selected 33.33% of all positives in first 15.38% sampled<br>precision=66.67% positives in sample<br>lift=2.17","model selected 41.67% of all positives in first 17.95% sampled<br>precision=71.43% positives in sample<br>lift=2.32","model selected 50.00% of all positives in first 20.51% sampled<br>precision=75.00% positives in sample<br>lift=2.44","model selected 58.33% of all positives in first 23.08% sampled<br>precision=77.78% positives in sample<br>lift=2.53","model selected 66.67% of all positives in first 25.64% sampled<br>precision=80.00% positives in sample<br>lift=2.60","model selected 75.00% of all positives in first 28.21% sampled<br>precision=81.82% positives in sample<br>lift=2.66","model selected 75.00% of all positives in first 30.77% sampled<br>precision=75.00% positives in sample<br>lift=2.44","model selected 75.00% of all positives in first 33.33% sampled<br>precision=69.23% positives in sample<br>lift=2.25","model selected 75.00% of all positives in first 35.90% sampled<br>precision=64.29% positives in sample<br>lift=2.09","model selected 75.00% of all positives in first 38.46% sampled<br>precision=60.00% positives in sample<br>lift=1.95","model selected 75.00% of all positives in first 41.03% sampled<br>precision=56.25% positives in sample<br>lift=1.83","model selected 75.00% of all positives in first 43.59% sampled<br>precision=52.94% positives in sample<br>lift=1.72","model selected 83.33% of all positives in first 46.15% sampled<br>precision=55.56% positives in sample<br>lift=1.81","model selected 91.67% of all positives in first 48.72% sampled<br>precision=57.89% positives in sample<br>lift=1.88","model selected 91.67% of all positives in first 51.28% sampled<br>precision=55.00% positives in sample<br>lift=1.79","model selected 91.67% of all positives in first 53.85% sampled<br>precision=52.38% positives in sample<br>lift=1.70","model selected 91.67% of all positives in first 56.41% sampled<br>precision=50.00% positives in sample<br>lift=1.62","model selected 100.00% of all positives in first 58.97% sampled<br>precision=52.17% positives in sample<br>lift=1.70","model selected 100.00% of all positives in first 61.54% sampled<br>precision=50.00% positives in sample<br>lift=1.62","model selected 100.00% of all positives in first 64.10% sampled<br>precision=48.00% positives in sample<br>lift=1.56","model selected 100.00% of all positives in first 66.67% sampled<br>precision=46.15% positives in sample<br>lift=1.50","model selected 100.00% of all positives in first 69.23% sampled<br>precision=44.44% positives in sample<br>lift=1.44","model selected 100.00% of all positives in first 71.79% sampled<br>precision=42.86% positives in sample<br>lift=1.39","model selected 100.00% of all positives in first 74.36% sampled<br>precision=41.38% positives in sample<br>lift=1.34","model selected 100.00% of all positives in first 76.92% sampled<br>precision=40.00% positives in sample<br>lift=1.30","model selected 100.00% of all positives in first 79.49% sampled<br>precision=38.71% positives in sample<br>lift=1.26","model selected 100.00% of all positives in first 82.05% sampled<br>precision=37.50% positives in sample<br>lift=1.22","model selected 100.00% of all positives in first 84.62% sampled<br>precision=36.36% positives in sample<br>lift=1.18","model selected 100.00% of all positives in first 87.18% sampled<br>precision=35.29% positives in sample<br>lift=1.15","model selected 100.00% of all positives in first 89.74% sampled<br>precision=34.29% positives in sample<br>lift=1.11","model selected 100.00% of all positives in first 92.31% sampled<br>precision=33.33% positives in sample<br>lift=1.08","model selected 100.00% of all positives in first 94.87% sampled<br>precision=32.43% positives in sample<br>lift=1.05","model selected 100.00% of all positives in first 97.44% sampled<br>precision=31.58% positives in sample<br>lift=1.03","model selected 100.00% of all positives in first 100.00% sampled<br>precision=30.77% positives in sample<br>lift=1.00"],"x":[2.5641026496887207,5.128205299377441,7.692307472229004,10.256410598754883,12.820512771606445,15.384614944458008,17.94871711730957,20.512821197509766,23.076923370361328,25.64102554321289,28.205127716064453,30.769229888916016,33.33333206176758,35.89743423461914,38.46154022216797,41.02564239501953,43.589744567871094,46.153846740722656,48.71794891357422,51.28205108642578,53.846153259277344,56.410255432128906,58.97435760498047,61.53845977783203,64.1025619506836,66.66666412353516,69.23076629638672,71.79486846923828,74.35897064208984,76.92308044433594,79.4871826171875,82.05128479003906,84.61538696289062,87.17948913574219,89.74359130859375,92.30769348144531,94.87179565429688,97.43589782714844,100.0],"y":[0.0,8.329999923706055,16.670000076293945,16.670000076293945,25.0,33.33000183105469,41.66999816894531,50.0,58.33000183105469,66.66999816894531,75.0,75.0,75.0,75.0,75.0,75.0,75.0,83.33000183105469,91.66999816894531,91.66999816894531,91.66999816894531,91.66999816894531,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"text","name":"random","text":["random selected 2.56% of all positives in first 2.56% sampled<br>precision=30.77% positives in sample","random selected 5.13% of all positives in first 5.13% sampled<br>precision=30.77% positives in sample","random selected 7.69% of all positives in first 7.69% sampled<br>precision=30.77% positives in sample","random selected 10.26% of all positives in first 10.26% sampled<br>precision=30.77% positives in sample","random selected 12.82% of all positives in first 12.82% sampled<br>precision=30.77% positives in sample","random selected 15.38% of all positives in first 15.38% sampled<br>precision=30.77% positives in sample","random selected 17.95% of all positives in first 17.95% sampled<br>precision=30.77% positives in sample","random selected 20.51% of all positives in first 20.51% sampled<br>precision=30.77% positives in sample","random selected 23.08% of all positives in first 23.08% sampled<br>precision=30.77% positives in sample","random selected 25.64% of all positives in first 25.64% sampled<br>precision=30.77% positives in sample","random selected 28.21% of all positives in first 28.21% sampled<br>precision=30.77% positives in sample","random selected 30.77% of all positives in first 30.77% sampled<br>precision=30.77% positives in sample","random selected 33.33% of all positives in first 33.33% sampled<br>precision=30.77% positives in sample","random selected 35.90% of all positives in first 35.90% sampled<br>precision=30.77% positives in sample","random selected 38.46% of all positives in first 38.46% sampled<br>precision=30.77% positives in sample","random selected 41.03% of all positives in first 41.03% sampled<br>precision=30.77% positives in sample","random selected 43.59% of all positives in first 43.59% sampled<br>precision=30.77% positives in sample","random selected 46.15% of all positives in first 46.15% sampled<br>precision=30.77% positives in sample","random selected 48.72% of all positives in first 48.72% sampled<br>precision=30.77% positives in sample","random selected 51.28% of all positives in first 51.28% sampled<br>precision=30.77% positives in sample","random selected 53.85% of all positives in first 53.85% sampled<br>precision=30.77% positives in sample","random selected 56.41% of all positives in first 56.41% sampled<br>precision=30.77% positives in sample","random selected 58.97% of all positives in first 58.97% sampled<br>precision=30.77% positives in sample","random selected 61.54% of all positives in first 61.54% sampled<br>precision=30.77% positives in sample","random selected 64.10% of all positives in first 64.10% sampled<br>precision=30.77% positives in sample","random selected 66.67% of all positives in first 66.67% sampled<br>precision=30.77% positives in sample","random selected 69.23% of all positives in first 69.23% sampled<br>precision=30.77% positives in sample","random selected 71.79% of all positives in first 71.79% sampled<br>precision=30.77% positives in sample","random selected 74.36% of all positives in first 74.36% sampled<br>precision=30.77% positives in sample","random selected 76.92% of all positives in first 76.92% sampled<br>precision=30.77% positives in sample","random selected 79.49% of all positives in first 79.49% sampled<br>precision=30.77% positives in sample","random selected 82.05% of all positives in first 82.05% sampled<br>precision=30.77% positives in sample","random selected 84.62% of all positives in first 84.62% sampled<br>precision=30.77% positives in sample","random selected 87.18% of all positives in first 87.18% sampled<br>precision=30.77% positives in sample","random selected 89.74% of all positives in first 89.74% sampled<br>precision=30.77% positives in sample","random selected 92.31% of all positives in first 92.31% sampled<br>precision=30.77% positives in sample","random selected 94.87% of all positives in first 94.87% sampled<br>precision=30.77% positives in sample","random selected 97.44% of all positives in first 97.44% sampled<br>precision=30.77% positives in sample","random selected 100.00% of all positives in first 100.00% sampled<br>precision=30.77% positives in sample"],"x":[2.5641026496887207,5.128205299377441,7.692307472229004,10.256410598754883,12.820512771606445,15.384614944458008,17.94871711730957,20.512821197509766,23.076923370361328,25.64102554321289,28.205127716064453,30.769229888916016,33.33333206176758,35.89743423461914,38.46154022216797,41.02564239501953,43.589744567871094,46.153846740722656,48.71794891357422,51.28205108642578,53.846153259277344,56.410255432128906,58.97435760498047,61.53845977783203,64.1025619506836,66.66666412353516,69.23076629638672,71.79486846923828,74.35897064208984,76.92308044433594,79.4871826171875,82.05128479003906,84.61538696289062,87.17948913574219,89.74359130859375,92.30769348144531,94.87179565429688,97.43589782714844,100.0],"y":[2.559999942779541,5.130000114440918,7.690000057220459,10.260000228881836,12.819999694824219,15.380000114440918,17.950000762939453,20.510000228881836,23.079999923706055,25.639999389648438,28.209999084472656,30.770000457763672,33.33000183105469,35.900001525878906,38.459999084472656,41.029998779296875,43.59000015258789,46.150001525878906,48.720001220703125,51.279998779296875,53.849998474121094,56.40999984741211,58.970001220703125,61.540000915527344,64.0999984741211,66.66999816894531,69.2300033569336,71.79000091552734,74.36000061035156,76.91999816894531,79.48999786376953,82.05000305175781,84.62000274658203,87.18000030517578,89.73999786376953,92.30999755859375,94.87000274658203,97.44000244140625,100.0],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"font":{"size":18},"text":"Lift curve","x":0.5},"xaxis":{"title":{"text":"Percentage sampled"},"spikemode":"across","range":[0,100]},"yaxis":{"title":{"text":"Percentage of positive"}},"hovermode":"x","plot_bgcolor":"#fff","legend":{"xanchor":"center","y":0.9,"x":0.1},"shapes":[{"type":"line","x0":30.769229888916016,"x1":30.769229888916016,"xref":"x","y0":0,"y1":100.0,"yref":"y"}],"annotations":[{"text":"cutoff=0.50","x":30.769229888916016,"y":5,"yref":"y"},{"align":"right","showarrow":false,"text":"Model: 9 out 12 (75.00%)","x":0.5,"xanchor":"left","xref":"paper","y":0.4,"yanchor":"top","yref":"paper"},{"align":"right","showarrow":false,"text":"Random: 3 out 12 (30.77%)","x":0.5,"xanchor":"left","xref":"paper","y":0.33,"yanchor":"top","yref":"paper"},{"align":"right","showarrow":false,"text":"Lift: 2.4","x":0.5,"xanchor":"left","xref":"paper","y":0.26,"yanchor":"top","yref":"paper"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Cumulative Precision</h3><h6 class="card-subtitle">Expected distribution for highest scores</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="da3f3ba7-783d-40fc-981a-96c71736eb9b" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("da3f3ba7-783d-40fc-981a-96c71736eb9b")) {                    Plotly.newPlot(                        "da3f3ba7-783d-40fc-981a-96c71736eb9b",                        [{"hoverinfo":"text","showlegend":false,"text":["percentage sampled = top 2.56%","percentage sampled = top 5.13%","percentage sampled = top 7.69%","percentage sampled = top 10.26%","percentage sampled = top 12.82%","percentage sampled = top 15.38%","percentage sampled = top 17.95%","percentage sampled = top 20.51%","percentage sampled = top 23.08%","percentage sampled = top 25.64%","percentage sampled = top 28.21%","percentage sampled = top 30.77%","percentage sampled = top 33.33%","percentage sampled = top 35.90%","percentage sampled = top 38.46%","percentage sampled = top 41.03%","percentage sampled = top 43.59%","percentage sampled = top 46.15%","percentage sampled = top 48.72%","percentage sampled = top 51.28%","percentage sampled = top 53.85%","percentage sampled = top 56.41%","percentage sampled = top 58.97%","percentage sampled = top 61.54%","percentage sampled = top 64.10%","percentage sampled = top 66.67%","percentage sampled = top 69.23%","percentage sampled = top 71.79%","percentage sampled = top 74.36%","percentage sampled = top 76.92%","percentage sampled = top 79.49%","percentage sampled = top 82.05%","percentage sampled = top 84.62%","percentage sampled = top 87.18%","percentage sampled = top 89.74%","percentage sampled = top 92.31%","percentage sampled = top 94.87%","percentage sampled = top 97.44%","percentage sampled = top 100.00%"],"x":[2.5641026496887207,5.128205299377441,7.692307472229004,10.256410598754883,12.820512771606445,15.384614944458008,17.94871711730957,20.512821197509766,23.076923370361328,25.64102554321289,28.205127716064453,30.769229888916016,33.33333206176758,35.89743423461914,38.46154022216797,41.02564239501953,43.589744567871094,46.153846740722656,48.71794891357422,51.28205108642578,53.846153259277344,56.410255432128906,58.97435760498047,61.53845977783203,64.1025619506836,66.66666412353516,69.23076629638672,71.79486846923828,74.35897064208984,76.92308044433594,79.4871826171875,82.05128479003906,84.61538696289062,87.17948913574219,89.74359130859375,92.30769348144531,94.87179565429688,97.43589782714844,100.0],"y":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"type":"scatter"},{"fill":"tozeroy","hoverinfo":"text","name":"1","text":["percentage 1=0.00%","percentage 1=50.00%","percentage 1=66.67%","percentage 1=50.00%","percentage 1=60.00%","percentage 1=66.67%","percentage 1=71.43%","percentage 1=75.00%","percentage 1=77.78%","percentage 1=80.00%","percentage 1=81.82%","percentage 1=75.00%","percentage 1=69.23%","percentage 1=64.29%","percentage 1=60.00%","percentage 1=56.25%","percentage 1=52.94%","percentage 1=55.56%","percentage 1=57.89%","percentage 1=55.00%","percentage 1=52.38%","percentage 1=50.00%","percentage 1=52.17%","percentage 1=50.00%","percentage 1=48.00%","percentage 1=46.15%","percentage 1=44.44%","percentage 1=42.86%","percentage 1=41.38%","percentage 1=40.00%","percentage 1=38.71%","percentage 1=37.50%","percentage 1=36.36%","percentage 1=35.29%","percentage 1=34.29%","percentage 1=33.33%","percentage 1=32.43%","percentage 1=31.58%","percentage 1=30.77%"],"x":[2.5641026496887207,5.128205299377441,7.692307472229004,10.256410598754883,12.820512771606445,15.384614944458008,17.94871711730957,20.512821197509766,23.076923370361328,25.64102554321289,28.205127716064453,30.769229888916016,33.33333206176758,35.89743423461914,38.46154022216797,41.02564239501953,43.589744567871094,46.153846740722656,48.71794891357422,51.28205108642578,53.846153259277344,56.410255432128906,58.97435760498047,61.53845977783203,64.1025619506836,66.66666412353516,69.23076629638672,71.79486846923828,74.35897064208984,76.92308044433594,79.4871826171875,82.05128479003906,84.61538696289062,87.17948913574219,89.74359130859375,92.30769348144531,94.87179565429688,97.43589782714844,100.0],"y":[0.0,50.0,66.66666666666667,50.0,60.0,66.66666666666667,71.42857142857143,75.0,77.77777777777777,80.0,81.81818181818181,75.0,69.23076923076923,64.28571428571429,60.0,56.25,52.94117647058823,55.55555555555556,57.89473684210526,55.0,52.38095238095238,50.0,52.17391304347826,50.0,48.0,46.15384615384615,44.44444444444444,42.857142857142854,41.37931034482759,40.0,38.70967741935484,37.5,36.36363636363637,35.294117647058826,34.285714285714285,33.333333333333336,32.432432432432435,31.57894736842105,30.76923076923077],"type":"scatter"},{"fill":"tonexty","hoverinfo":"text","name":"0","text":["percentage 0=100.00%","percentage 0=50.00%","percentage 0=33.33%","percentage 0=50.00%","percentage 0=40.00%","percentage 0=33.33%","percentage 0=28.57%","percentage 0=25.00%","percentage 0=22.22%","percentage 0=20.00%","percentage 0=18.18%","percentage 0=25.00%","percentage 0=30.77%","percentage 0=35.71%","percentage 0=40.00%","percentage 0=43.75%","percentage 0=47.06%","percentage 0=44.44%","percentage 0=42.11%","percentage 0=45.00%","percentage 0=47.62%","percentage 0=50.00%","percentage 0=47.83%","percentage 0=50.00%","percentage 0=52.00%","percentage 0=53.85%","percentage 0=55.56%","percentage 0=57.14%","percentage 0=58.62%","percentage 0=60.00%","percentage 0=61.29%","percentage 0=62.50%","percentage 0=63.64%","percentage 0=64.71%","percentage 0=65.71%","percentage 0=66.67%","percentage 0=67.57%","percentage 0=68.42%","percentage 0=69.23%"],"x":[2.5641026496887207,5.128205299377441,7.692307472229004,10.256410598754883,12.820512771606445,15.384614944458008,17.94871711730957,20.512821197509766,23.076923370361328,25.64102554321289,28.205127716064453,30.769229888916016,33.33333206176758,35.89743423461914,38.46154022216797,41.02564239501953,43.589744567871094,46.153846740722656,48.71794891357422,51.28205108642578,53.846153259277344,56.410255432128906,58.97435760498047,61.53845977783203,64.1025619506836,66.66666412353516,69.23076629638672,71.79486846923828,74.35897064208984,76.92308044433594,79.4871826171875,82.05128479003906,84.61538696289062,87.17948913574219,89.74359130859375,92.30769348144531,94.87179565429688,97.43589782714844,100.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"font":{"size":18},"text":"Cumulative percentage per category<br>when sampling top X%","x":0.5},"xaxis":{"title":{"text":"Top X% model scores"},"spikemode":"across","range":[0,100],"nticks":10},"yaxis":{"title":{"text":"Cumulative precision per category"}},"hovermode":"x","plot_bgcolor":"#fff","margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab2"
+     role="tabpanel" aria-labelledby="myTab2-tab"> <div><H1>Individual Predictions</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Select Random Index</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected index: <b>None</b>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Prediction</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+no index selected
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Plot</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>no index selected</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Partial Dependence Plot</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="859420ac-7fc9-437f-97eb-6a548fe454b5" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("859420ac-7fc9-437f-97eb-6a548fe454b5")) {                    Plotly.newPlot(                        "859420ac-7fc9-437f-97eb-6a548fe454b5",                        [{"line":{"color":"grey","width":4},"mode":"lines+markers","name":"average prediction <br>for different values of <br>Glucose","x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[24.35,25.51,28.07,29.06,30.68,33.04,33.8,39.05,53.29,62.09],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[27.364749189777616,29.585320019215356,35.53306804786238,37.64196289853412,40.78101076339835,43.99908941731973,44.43222829658149,49.37399932867502,60.430050899590384,68.70446013046194],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[21.59661585773815,22.78258316673444,25.546494941727126,26.632265789917902,28.488702697038608,30.543655064257486,31.47087313139728,35.6855311574205,50.53372544756567,64.21570245714314],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[35.18814952382992,37.59916248660271,40.74262127239025,40.136887156022105,40.672191794762824,42.3135293890305,41.83693597506669,51.183442637205815,59.43317015957482,68.9290770159746],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[23.66156429089362,25.18062103005283,28.44234050049488,29.486135934646228,31.492046324191147,36.42501055278108,36.83360903489516,42.41531152315212,55.608401266531814,67.69859909931225],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[7.780636809526602,8.146133871905471,9.14544296732723,9.765348766979733,10.804803131225734,12.621351907308268,13.819057740117898,17.881073126138865,35.38961184628652,44.374834743880776],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[24.696997256291457,27.536646400160347,33.54605920438182,34.70954455942923,37.169159223634495,39.88688387252919,39.61737855246288,41.77526022158631,56.82634800646637,66.79147418643637],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[34.831352633539325,35.15643098299859,37.47260819696416,39.294407250750155,40.781308079759064,42.32584928110737,45.27257690071568,48.552114725007186,64.26852869412231,69.87986932414123],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[9.851382508739471,10.241612910299223,11.233593264386917,11.360175542867927,13.204375293972445,16.88436489218488,19.116678875427652,26.20594576132365,32.36353914785881,39.24279930425947],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[9.74199187410492,10.027155893082753,12.140245079132782,13.16174609728893,14.247214384007956,15.862926449053596,16.94840154092817,22.265445293537496,44.76026746521855,54.09634498433286],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[56.48864405534799,56.61170554047844,59.49673167620989,61.35708053651553,61.820595474674846,61.825622120935634,62.00340696298493,64.74838453064048,71.15526066363033,76.93843190244863],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[8.35048936570391,9.087664552443462,10.467415987673776,11.226899014231458,12.613620293495668,13.523104031004967,14.777694354540428,16.57618430768738,36.05549343299218,45.740639401666805],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[42.1710183608721,44.05869551688089,45.32129403907233,45.66318526913905,48.9213946518299,51.64666559335953,51.94711910809876,53.25531428136811,68.22044269458468,73.34095155964089],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[24.89783294384289,27.302604682420505,33.32495993168927,34.5135734346856,35.92166012516863,39.55422145702586,39.28342645876518,43.27949222820913,56.79411803265479,65.53301927751637],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[9.318719772952162,10.018194915016556,11.411569379947313,11.959370899810782,14.196627262684128,15.29182580129365,17.13890235103531,19.780532956981904,39.22414501874675,45.36770567281497],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[50.4226977077239,53.689532811149284,53.287357724733695,54.083097078003384,54.35309718653346,52.88298581728803,53.161373074106336,55.057283341895854,66.75313295229589,75.16519971392522],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[18.877564332705443,19.41346753822394,20.4762646776164,21.459157939392203,22.65697324443213,25.360695629706576,26.43510599830168,32.745551400390674,49.716936046571504,64.6051196840881],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[5.567738867706914,6.098268255630639,6.744858481522095,7.091189453050818,8.51910600847348,10.411874681074245,11.32291752350699,13.989053272078348,27.27069988639738,38.39354335969312],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[10.546944520547502,10.671872897196929,11.492980774280465,12.315112062064532,13.826725453523633,16.400341859939953,17.244942753512966,23.875642835324193,43.20801236818379,54.171448994315],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[23.810817524158733,25.812640634583,29.752387632054635,32.55939938336685,34.82147897592538,39.49899966316755,40.66494870690637,50.07629956866333,62.360428984742946,70.01441774869427],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[9.430575525758364,9.970238146965823,11.337023374129567,12.091955494465168,14.223575979318404,16.466626437708452,17.19201202274716,21.97936267234478,42.393755653298875,52.23081032264503],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[26.030317221862674,28.341317579298597,32.477084317614604,33.06945501935474,34.67911190032233,37.56560824534877,37.97033385569139,45.26340127479968,53.99356094598505,66.90700125573657],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[35.62964314116138,37.4429590315202,40.80622619163839,42.066164005147634,43.26715191527536,45.964435911347515,45.475150053224795,51.42163338091071,64.04636077048042,71.4172291564267],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[21.662053501846003,22.95131002727329,25.209800481524823,25.780638327294202,28.225535296685827,29.19295333760458,29.268861373870674,36.16529977715646,53.75849391445493,61.58366517150679],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[14.752098155587392,13.872810321215503,15.233269356302154,17.348031866993164,18.845990165970093,20.514595125161332,21.898880785325453,29.00765144678393,44.43858664442345,51.79110239921157],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[9.683256376111293,10.335407338038905,11.605416811692985,12.71755663894291,13.484461266010594,16.221139051418174,17.104615893821865,21.038938382322627,39.59621130429258,51.826096932164354],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[20.012269547768742,22.11168965075054,25.71569491613191,26.270554976281414,27.938316268618614,30.88929321823376,31.389664606699625,37.39598517170877,50.70955683633526,61.715679172872015],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[58.11615489316292,58.69224617190287,61.67621393339531,62.27020337901541,62.51717900782797,65.0939989866194,65.48500763951829,68.46661134041182,78.08020069099577,82.28326854428265],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[17.20204914157395,18.154774123717978,20.708104700231278,21.51876065421028,23.30466956389897,26.692295763509154,27.71759605934602,33.325861006114295,51.55416125060959,58.260263623697526],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[27.947133067319967,29.937203254151857,34.741038386805045,35.82158619061237,39.29765628134207,42.872404125281555,43.6133559070767,50.49603976310898,59.74832948018201,66.22112563686196],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[22.027073791444398,22.7504438804529,24.511501230963447,26.028193814518673,28.443879489341167,31.664166034701147,31.3373827577186,39.02085961053257,57.077787810766246,68.35491952479988],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[25.693698623239946,27.73813400723363,31.277636909777996,33.29418807027217,36.70027950829316,37.26425577168253,38.124958078235046,43.22009401347622,59.28621088919095,67.08410525845837],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[45.37276697524949,46.70929058076481,50.54189536038122,51.604678723027405,53.345338638309045,55.76058683770905,56.22032723497989,59.9578636324829,71.94795133895803,77.30254946968407],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[11.20618655667623,11.668088791402273,12.929246868784839,14.271325982634774,15.782801849647246,19.1916386851551,19.592756644615232,23.755185560109133,43.82702903093191,50.4979381116386],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[10.909754469009334,10.539851857462887,11.166303589371248,10.78520285107236,11.400449675080612,11.575917574183265,12.851607606417481,17.64339094551353,33.043090371406656,45.21177378951667],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[18.105109336644166,19.18709009435849,21.668286974252325,21.956638269826737,23.189428300352336,26.31568846425138,26.826669112218326,34.2560492565076,43.982728890149794,54.28136205434227],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[41.01416528096314,42.41236242018711,45.836793008246474,46.94133519263266,47.175015233315996,50.00633365035344,50.10377109285903,54.85712814102025,66.95978651808694,75.30948624784911],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[37.49753863459734,38.261345508895424,39.468997623376914,39.884416791563496,40.13363502167693,41.793281421824894,42.52979754385601,48.84238229582166,64.07235528702905,73.37914230869562],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[78.0,85.66666666666667,98.0,100.66666666666666,106.88888888888889,115.22222222222223,119.0,139.33333333333331,166.77777777777777,197.0],"y":[27.96359775165575,29.427009036027012,34.185930826214204,36.189192693676894,38.711764290581506,43.2805938629938,46.26732179992325,59.24834275578489,66.26591202185253,70.65157350547743],"type":"scatter"}],                        {"plot_bgcolor":"#fff","title":{"text":"pdp plot for Glucose"},"xaxis":{"title":{"text":"Glucose"}},"yaxis":{"title":{"text":"Predicted Outcome (Predicted %)"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"showlegend":false,"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Table</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>no index selected</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab3"
+     role="tabpanel" aria-labelledby="myTab3-tab"> <div><div><H1>What if...</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Select Random Index</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected index: <b>None</b>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Prediction</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Feature Input</h3><h6 class="card-subtitle">Adjust the feature values to change the prediction</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected: <b>None</b>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="Glucose">Glucose</label>
+    <input id="Glucose" type="text" value="None" name="Glucose" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="DiabetesPedigreeFunction">DiabetesPedigreeFunction</label>
+    <input id="DiabetesPedigreeFunction" type="text" value="None" name="DiabetesPedigreeFunction" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="Pregnancies">Pregnancies</label>
+    <input id="Pregnancies" type="text" value="None" name="Pregnancies" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="SkinThickness">SkinThickness</label>
+    <input id="SkinThickness" type="text" value="None" name="SkinThickness" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="Age">Age</label>
+    <input id="Age" type="text" value="None" name="Age" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="Insulin">Insulin</label>
+    <input id="Insulin" type="text" value="None" name="Insulin" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="BMI">BMI</label>
+    <input id="BMI" type="text" value="None" name="BMI" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="BloodPressure">BloodPressure</label>
+    <input id="BloodPressure" type="text" value="None" name="BloodPressure" disabled>
+</div>
+    
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Plot</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Partial Dependence Plot</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Table</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="tab-pane " id="myTab4"
+     role="tabpanel" aria-labelledby="myTab4-tab"> <div><H1>Feature Dependence</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Shap Summary</h3><h6 class="card-subtitle">Ordering features by shap value</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="ae2faec0-34e6-4ca5-a827-737854c05540" class="plotly-graph-div" style="height:360px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("ae2faec0-34e6-4ca5-a827-737854c05540")) {                    Plotly.newPlot(                        "ae2faec0-34e6-4ca5-a827-737854c05540",                        [{"hoverinfo":"text","orientation":"h","x":[0.012517066900596122,0.013265335187687301,0.014379546040738567,0.026766298776323395,0.030685957717520054,0.033592957435208105,0.03910191230084344,0.08034631003966618],"y":["8. BloodPressure","7. Insulin","6. SkinThickness","5. DiabetesPedigreeFunction","4. BMI","3. Age","2. Pregnancies","1. Glucose"],"type":"bar"}],                        {"plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Average impact on predicted Outcome<br>(mean absolute SHAP value)"},"template":{"data":{"scatter":[{"type":"scatter"}]}},"yaxis":{"automargin":true},"xaxis":{"automargin":true,"title":{"text":""}},"height":360,"margin":{"b":40,"l":168,"pad":4,"r":40,"t":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Shap Dependence</h3><h6 class="card-subtitle">Relationship between feature value and SHAP value</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="d478d905-6ec8-4c8b-a94a-60f4d594c3c2" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("d478d905-6ec8-4c8b-a94a-60f4d594c3c2")) {                    Plotly.newPlot(                        "d478d905-6ec8-4c8b-a94a-60f4d594c3c2",                        [{"hoverinfo":"text","marker":{"color":[2,13,12,2,2,0,5,1,8,1,5,2,2,3,4,8,7,9,7,0,8,1,5,7,9,2,10,4,2,4,0,7,2,6,0,3,15,2,1],"colorbar":{"title":{"text":"Pregnancies"}},"colorscale":[[0.0,"rgb(0,0,255)"],[1.0,"rgb(255,0,0)"]],"opacity":0.6,"showscale":true,"size":7},"mode":"markers","text":["None=453<br>Glucose=119<br>Pregnancies=2<br>SHAP=-0.009","None=86<br>Glucose=106<br>Pregnancies=13<br>SHAP=-0.043","None=215<br>Glucose=151<br>Pregnancies=12<br>SHAP=0.074","None=60<br>Glucose=84<br>Pregnancies=2<br>SHAP=-0.095","None=760<br>Glucose=88<br>Pregnancies=2<br>SHAP=-0.094","None=367<br>Glucose=101<br>Pregnancies=0<br>SHAP=-0.059","None=148<br>Glucose=147<br>Pregnancies=5<br>SHAP=0.095","None=224<br>Glucose=100<br>Pregnancies=1<br>SHAP=-0.067","None=21<br>Glucose=99<br>Pregnancies=8<br>SHAP=-0.075","None=556<br>Glucose=97<br>Pregnancies=1<br>SHAP=-0.077","None=362<br>Glucose=103<br>Pregnancies=5<br>SHAP=-0.048","None=252<br>Glucose=90<br>Pregnancies=2<br>SHAP=-0.082","None=656<br>Glucose=101<br>Pregnancies=2<br>SHAP=-0.060","None=570<br>Glucose=78<br>Pregnancies=3<br>SHAP=-0.125","None=444<br>Glucose=117<br>Pregnancies=4<br>SHAP=-0.018","None=489<br>Glucose=194<br>Pregnancies=8<br>SHAP=0.274","None=17<br>Glucose=107<br>Pregnancies=7<br>SHAP=-0.036","None=23<br>Glucose=119<br>Pregnancies=9<br>SHAP=-0.009","None=222<br>Glucose=119<br>Pregnancies=7<br>SHAP=0.002","None=376<br>Glucose=98<br>Pregnancies=0<br>SHAP=-0.070","None=540<br>Glucose=100<br>Pregnancies=8<br>SHAP=-0.057","None=173<br>Glucose=79<br>Pregnancies=1<br>SHAP=-0.110","None=391<br>Glucose=166<br>Pregnancies=5<br>SHAP=0.195","None=477<br>Glucose=114<br>Pregnancies=7<br>SHAP=-0.028","None=618<br>Glucose=112<br>Pregnancies=9<br>SHAP=-0.027","None=573<br>Glucose=98<br>Pregnancies=2<br>SHAP=-0.076","None=11<br>Glucose=168<br>Pregnancies=10<br>SHAP=0.188","None=482<br>Glucose=85<br>Pregnancies=4<br>SHAP=-0.100","None=374<br>Glucose=122<br>Pregnancies=2<br>SHAP=-0.004","None=228<br>Glucose=197<br>Pregnancies=4<br>SHAP=0.216","None=300<br>Glucose=167<br>Pregnancies=0<br>SHAP=0.200","None=695<br>Glucose=142<br>Pregnancies=7<br>SHAP=0.044","None=142<br>Glucose=108<br>Pregnancies=2<br>SHAP=-0.051","None=616<br>Glucose=117<br>Pregnancies=6<br>SHAP=-0.016","None=506<br>Glucose=180<br>Pregnancies=0<br>SHAP=0.246","None=20<br>Glucose=126<br>Pregnancies=3<br>SHAP=-0.001","None=88<br>Glucose=136<br>Pregnancies=15<br>SHAP=0.034","None=423<br>Glucose=115<br>Pregnancies=2<br>SHAP=-0.024","None=432<br>Glucose=80<br>Pregnancies=1<br>SHAP=-0.107"],"x":[119,106,151,84,88,101,147,100,99,97,103,90,101,78,117,194,107,119,119,98,100,79,166,114,112,98,168,85,122,197,167,142,108,117,180,126,136,115,80],"y":[-0.008604150275954008,-0.042850243251592306,0.07363988236198621,-0.0950199067157913,-0.0943461615190672,-0.05888107174304007,0.094712330986282,-0.06656882146512033,-0.07476852934813001,-0.07738556114923728,-0.047673644992926964,-0.08222074423021203,-0.060106462687116044,-0.12480263866318364,-0.018191489180042736,0.27372706900901866,-0.036053630058679904,-0.00900810088354147,0.0018154075862192014,-0.07013096758296773,-0.05654043072717551,-0.11036779275207285,0.1948493099846998,-0.02810207095566606,-0.027240720557627315,-0.07596549520443631,0.18759282944796615,-0.10008905316360393,-0.003822809807206458,0.21641991590275322,0.1999853772023184,0.04406161433240294,-0.05057938590353364,-0.015587724225666625,0.24553986106580486,-0.0008328391491267267,0.034409447894039366,-0.024354266496539857,-0.10665833308423267],"type":"scattergl"}],                        {"hovermode":"closest","paper_bgcolor":"#fff","plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Dependence plot for Glucose"},"xaxis":{"title":{"text":"Glucose"}},"yaxis":{"title":{"text":"SHAP value"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+</div>
+<script type="text/javascript">
+var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
+triggerTabList.forEach(function (triggerEl) {
+  var tabTrigger = new bootstrap.Tab(triggerEl)
+
+  triggerEl.addEventListener('click', function (event) {
+    event.preventDefault()
+    tabTrigger.show()
+    window.dispatchEvent(new Event('resize'));
+  })
+})
+</script>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+window.dispatchEvent(new Event('resize'));
+</script>
+        
+</html>
+    

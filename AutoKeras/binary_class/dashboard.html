@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>explainerdashboard</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+<div><H1>Model Explainer</H1></div><ul class="nav nav-tabs" id="myTab" role="tablist">
+<li class="nav-item" role="presentation">
+    <button class="nav-link active" id="myTab0-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab0" role="tab"
+    aria-selected="true" aria-controls="myTab0">Feature Importances</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab1-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab1" role="tab"
+    aria-selected="false" aria-controls="myTab1">Classification Stats</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab2-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab2" role="tab"
+    aria-selected="false" aria-controls="myTab2">Individual Predictions</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab3-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab3" role="tab"
+    aria-selected="false" aria-controls="myTab3">What if...</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab4-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab4" role="tab"
+    aria-selected="false" aria-controls="myTab4">Feature Dependence</button>
+</li>
+
+</ul>
+
+<div class="tab-content" id="myTabContent">
+
+
+<div class="tab-pane active" id="myTab0"
+     role="tabpanel" aria-labelledby="myTab0-tab"> <div></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Feature Importances</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="e9c89511-c10b-4283-a93d-6bc5bf4a83f2" class="plotly-graph-div" style="height:360px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("e9c89511-c10b-4283-a93d-6bc5bf4a83f2")) {                    Plotly.newPlot(                        "e9c89511-c10b-4283-a93d-6bc5bf4a83f2",                        [{"hoverinfo":"text","orientation":"h","x":[0.0047650118394021515,0.005024504682365615,0.016559919598088012,0.019117781387172225,0.020813686833845577,0.031756330602449194,0.034831356846326086,0.049295724969771186],"y":["8. SkinThickness","7. BloodPressure","6. Insulin","5. DiabetesPedigreeFunction","4. BMI","3. Age","2. Pregnancies","1. Glucose"],"type":"bar"}],                        {"plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Average impact on predicted Outcome<br>(mean absolute SHAP value)"},"template":{"data":{"scatter":[{"type":"scatter"}]}},"yaxis":{"automargin":true},"xaxis":{"automargin":true,"title":{"text":""}},"height":360,"margin":{"b":40,"l":168,"pad":4,"r":40,"t":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+<div></div>
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab1"
+     role="tabpanel" aria-labelledby="myTab1-tab"> <div></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Model performance metrics</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">metric</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>accuracy</td>
+      <td>0.778</td>
+    </tr>
+    <tr>
+      <td>precision</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <td>recall</td>
+      <td>0.833</td>
+    </tr>
+    <tr>
+      <td>f1</td>
+      <td>0.714</td>
+    </tr>
+    <tr>
+      <td>roc_auc_score</td>
+      <td>0.806</td>
+    </tr>
+    <tr>
+      <td>pr_auc_score</td>
+      <td>0.695</td>
+    </tr>
+    <tr>
+      <td>log_loss</td>
+      <td>0.557</td>
+    </tr>
+
+  </tbody>
+</table>
+    
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Confusion Matrix</h3><h6 class="card-subtitle">How many false positives and false negatives?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="48f6fa69-f5fe-484f-af0d-a52dac3544e0" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("48f6fa69-f5fe-484f-af0d-a52dac3544e0")) {                    Plotly.newPlot(                        "48f6fa69-f5fe-484f-af0d-a52dac3544e0",                        [{"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"hoverinfo":"skip","showscale":false,"x":[" 0"," 1"],"y":[" 0"," 1"],"z":[[50.0,16.7],[5.6,27.8]],"zmax":130,"zmin":0,"type":"heatmap"}],                        {"plot_bgcolor":"#fff","title":{"text":"Confusion Matrix"},"xaxis":{"constrain":"domain","showgrid":false,"tickmode":"array","ticktext":[" 0"," 1"],"tickvals":[" 0"," 1"],"title":{"text":"predicted"}},"yaxis":{"autorange":"reversed","scaleanchor":"x","scaleratio":1,"showgrid":false,"side":"left","tickmode":"array","ticktext":[" 0"," 1"],"tickvals":[" 0"," 1"],"title":{"standoff":20,"text":"observed"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"font":{"size":20},"showarrow":false,"text":"50.0%","x":" 0","y":" 0"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(9)","x":" 0","y":" 0"},{"font":{"size":20},"showarrow":false,"text":"16.7%","x":" 1","y":" 0"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(3)","x":" 1","y":" 0"},{"font":{"size":20},"showarrow":false,"text":"5.6%","x":" 0","y":" 1"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(1)","x":" 0","y":" 1"},{"font":{"size":20},"showarrow":false,"text":"27.8%","x":" 1","y":" 1"},{"font":{"size":12},"showarrow":false,"text":" <br> <br> <br>(5)","x":" 1","y":" 1"}],"margin":{"t":40,"b":40,"l":7,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Precision Plot</h3><h6 class="card-subtitle">Does fraction positive increase with predicted probability?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="139431d5-695c-456f-b596-5fde390ca76a" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("139431d5-695c-456f-b596-5fde390ca76a")) {                    Plotly.newPlot(                        "139431d5-695c-456f-b596-5fde390ca76a",                        [{"name":"counts","width":[0.09000000000000001,0.09000000000000001,0.09000000000000004,0.08999999999999998,0.08999999999999998,0.0900000000000001,0.08999999999999998,0.08999999999999998,0.08999999999999998,0.08999999999999998],"x":[0.05,0.15000000000000002,0.25,0.35000000000000003,0.45,0.55,0.6500000000000001,0.75,0.8500000000000001,0.95],"y":[0,0,4,2,4,5,3,0,0,0],"type":"bar"},{"name":"percentage 1","x":[null,null,0.246,0.347,0.427,0.565,0.618,null,null,null],"y":[null,null,0.0,0.5,0.0,0.6,0.667,null,null,null],"yaxis":"y2","type":"scatter"}],                        {"plot_bgcolor":"#fff","shapes":[{"type":"line","x0":0.5,"x1":0.5,"xref":"x","y0":0,"y1":1.0,"yref":"y2"}],"title":{"text":"percentage 1 vs predicted probability"},"xaxis":{"title":{"text":"predicted probability"}},"yaxis":{"title":{"text":"counts"}},"yaxis2":{"overlaying":"y","rangemode":"tozero","side":"right","tickfont":{"color":"rgb(148, 103, 189)"},"title":{"font":{"color":"rgb(148, 103, 189)"},"text":"percentage"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"legend":{"orientation":"h","xanchor":"center","y":-0.2,"x":0.5},"margin":{"t":40,"b":40,"l":40,"r":40},"annotations":[{"text":"cutoff=0.5","x":0.5,"y":0.1,"yref":"y2"}]},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Classification Plot</h3><h6 class="card-subtitle">Distribution of labels above and below cutoff</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="72cc3829-7c04-4c2a-ba3b-7470beff5ceb" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("72cc3829-7c04-4c2a-ba3b-7470beff5ceb")) {                    Plotly.newPlot(                        "72cc3829-7c04-4c2a-ba3b-7470beff5ceb",                        [{"hoverinfo":"text","name":"0","text":["<b>9</b> (90.00%)","<b>3</b> (37.50%)","<b>12</b> (66.67%)"],"textposition":"auto","x":["below cutoff","above cutoff","total"],"y":[90.0,37.5,66.66666666666667],"type":"bar"},{"hoverinfo":"text","name":"1","text":["<b>1</b> (10.00%)","<b>5</b> (62.50%)","<b>6</b> (33.33%)"],"textposition":"auto","x":["below cutoff","above cutoff","total"],"y":[10.0,62.5,33.333333333333336],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"text":"Percentage above and below cutoff"},"margin":{"t":40,"b":40,"l":40,"r":40},"barmode":"stack","legend":{"orientation":"h","xanchor":"center","y":-0.2,"x":0.5}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">ROC AUC Plot</h3><h6 class="card-subtitle">Trade-off between False positives and false negatives</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="7f9927d4-2da0-461b-966a-c516feeef556" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7f9927d4-2da0-461b-966a-c516feeef556")) {                    Plotly.newPlot(                        "7f9927d4-2da0-461b-966a-c516feeef556",                        [{"hoverinfo":"text","mode":"lines","name":"ROC AUC CURVE","text":["threshold: 1.63 <br> FP: 0.00 <br> TP: 0.00","threshold: 0.63 <br> FP: 0.00 <br> TP: 0.17","threshold: 0.62 <br> FP: 0.08 <br> TP: 0.17","threshold: 0.60 <br> FP: 0.08 <br> TP: 0.50","threshold: 0.60 <br> FP: 0.17 <br> TP: 0.50","threshold: 0.55 <br> FP: 0.17 <br> TP: 0.67","threshold: 0.54 <br> FP: 0.25 <br> TP: 0.67","threshold: 0.54 <br> FP: 0.25 <br> TP: 0.83","threshold: 0.41 <br> FP: 0.58 <br> TP: 0.83","threshold: 0.39 <br> FP: 0.58 <br> TP: 1.00","threshold: 0.23 <br> FP: 1.00 <br> TP: 1.00"],"x":[0.0,0.0,0.08333333333333333,0.08333333333333333,0.16666666666666666,0.16666666666666666,0.25,0.25,0.5833333333333334,0.5833333333333334,1.0],"y":[0.0,0.16666666666666666,0.16666666666666666,0.5,0.5,0.6666666666666666,0.6666666666666666,0.8333333333333334,0.8333333333333334,1.0,1.0],"type":"scatter"}],                        {"hovermode":"closest","plot_bgcolor":"#fff","title":{"text":"ROC AUC CURVE"},"xaxis":{"constrain":"domain","range":[0,1],"title":{"text":"False Positive Rate"}},"yaxis":{"constrain":"domain","range":[0,1],"scaleanchor":"x","scaleratio":1,"title":{"text":"True Positive Rate"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"align":"right","showarrow":false,"text":"roc-auc-score: 0.81","x":0.6,"xanchor":"left","y":0.4,"yanchor":"top"},{"align":"right","showarrow":false,"text":"cutoff: 0.50","x":0.6,"xanchor":"left","y":0.35,"yanchor":"top"},{"align":"right","showarrow":false,"text":"TPR: 0.83","x":0.6,"xanchor":"left","y":0.3,"yanchor":"top"},{"align":"right","showarrow":false,"text":"FPR: 0.25","x":0.6,"xanchor":"left","y":0.24,"yanchor":"top"}],"shapes":[{"line":{"color":"darkslategray","dash":"dot","width":4},"type":"line","x0":0,"x1":1,"xref":"x","y0":0,"y1":1,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0,"x1":1,"xref":"x","y0":0.8333333333333334,"y1":0.8333333333333334,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0.25,"x1":0.25,"xref":"x","y0":0,"y1":1,"yref":"y"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">PR AUC Plot</h3><h6 class="card-subtitle">Trade-off between Precision and Recall</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="f1943195-3bdd-48cd-a576-873590868e75" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("f1943195-3bdd-48cd-a576-873590868e75")) {                    Plotly.newPlot(                        "f1943195-3bdd-48cd-a576-873590868e75",                        [{"hoverinfo":"text","mode":"lines","name":"PR AUC CURVE","text":["threshold: 0.23 <br>precision: 0.33 <br>recall: 1.00","threshold: 0.25 <br>precision: 0.35 <br>recall: 1.00","threshold: 0.25 <br>precision: 0.38 <br>recall: 1.00","threshold: 0.25 <br>precision: 0.40 <br>recall: 1.00","threshold: 0.30 <br>precision: 0.43 <br>recall: 1.00","threshold: 0.39 <br>precision: 0.46 <br>recall: 1.00","threshold: 0.41 <br>precision: 0.42 <br>recall: 0.83","threshold: 0.41 <br>precision: 0.45 <br>recall: 0.83","threshold: 0.41 <br>precision: 0.50 <br>recall: 0.83","threshold: 0.47 <br>precision: 0.56 <br>recall: 0.83","threshold: 0.54 <br>precision: 0.62 <br>recall: 0.83","threshold: 0.54 <br>precision: 0.57 <br>recall: 0.67","threshold: 0.55 <br>precision: 0.67 <br>recall: 0.67","threshold: 0.60 <br>precision: 0.60 <br>recall: 0.50","threshold: 0.60 <br>precision: 0.75 <br>recall: 0.50","threshold: 0.60 <br>precision: 0.67 <br>recall: 0.33","threshold: 0.62 <br>precision: 0.50 <br>recall: 0.17","threshold: 0.63 <br>precision: 1.00 <br>recall: 0.17"],"x":[0.3333333333333333,0.35294117647058826,0.375,0.4,0.42857142857142855,0.46153846153846156,0.4166666666666667,0.45454545454545453,0.5,0.5555555555555556,0.625,0.5714285714285714,0.6666666666666666,0.6,0.75,0.6666666666666666,0.5,1.0,1.0],"y":[1.0,1.0,1.0,1.0,1.0,1.0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.6666666666666666,0.6666666666666666,0.5,0.5,0.3333333333333333,0.16666666666666666,0.16666666666666666,0.0],"type":"scatter"}],                        {"hovermode":"closest","plot_bgcolor":"#fff","title":{"text":"PR AUC CURVE"},"xaxis":{"constrain":"domain","range":[0,1],"title":{"text":"Precision"}},"yaxis":{"constrain":"domain","range":[0,1],"scaleanchor":"x","scaleratio":1,"title":{"text":"Recall"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"align":"right","showarrow":false,"text":"pr-auc-score: 0.69","x":0.15,"xanchor":"left","y":0.4,"yanchor":"top"},{"align":"right","showarrow":false,"text":"cutoff: 0.50","x":0.15,"xanchor":"left","y":0.35,"yanchor":"top"},{"align":"right","showarrow":false,"text":"precision: 0.56","x":0.15,"xanchor":"left","y":0.3,"yanchor":"top"},{"align":"right","showarrow":false,"text":"recall: 0.83","x":0.15,"xanchor":"left","y":0.25,"yanchor":"top"}],"shapes":[{"line":{"color":"lightslategray","width":1},"type":"line","x0":0,"x1":1,"xref":"x","y0":0.8333333333333334,"y1":0.8333333333333334,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0.5555555555555556,"x1":0.5555555555555556,"xref":"x","y0":0,"y1":1,"yref":"y"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Lift Curve</h3><h6 class="card-subtitle">Performance how much better than random?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="9e5a3d6f-fa21-4b59-b901-28266b62da50" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("9e5a3d6f-fa21-4b59-b901-28266b62da50")) {                    Plotly.newPlot(                        "9e5a3d6f-fa21-4b59-b901-28266b62da50",                        [{"hoverinfo":"text","name":"perfect","text":["0%, 0%","33.33%, 100%","100, 100%"],"x":[0.0,33.333335876464844,100],"y":[0.0,100,100],"type":"scatter"},{"hoverinfo":"text","name":"model","text":["model selected 16.67% of all positives in first 5.56% sampled<br>precision=100.00% positives in sample<br>lift=3.00","model selected 16.67% of all positives in first 11.11% sampled<br>precision=50.00% positives in sample<br>lift=1.50","model selected 33.33% of all positives in first 16.67% sampled<br>precision=66.67% positives in sample<br>lift=2.00","model selected 50.00% of all positives in first 22.22% sampled<br>precision=75.00% positives in sample<br>lift=2.25","model selected 50.00% of all positives in first 27.78% sampled<br>precision=60.00% positives in sample<br>lift=1.80","model selected 66.67% of all positives in first 33.33% sampled<br>precision=66.67% positives in sample<br>lift=2.00","model selected 66.67% of all positives in first 38.89% sampled<br>precision=57.14% positives in sample<br>lift=1.71","model selected 83.33% of all positives in first 44.44% sampled<br>precision=62.50% positives in sample<br>lift=1.87","model selected 83.33% of all positives in first 50.00% sampled<br>precision=55.56% positives in sample<br>lift=1.67","model selected 83.33% of all positives in first 55.56% sampled<br>precision=50.00% positives in sample<br>lift=1.50","model selected 83.33% of all positives in first 61.11% sampled<br>precision=45.45% positives in sample<br>lift=1.36","model selected 83.33% of all positives in first 66.67% sampled<br>precision=41.67% positives in sample<br>lift=1.25","model selected 100.00% of all positives in first 72.22% sampled<br>precision=46.15% positives in sample<br>lift=1.38","model selected 100.00% of all positives in first 77.78% sampled<br>precision=42.86% positives in sample<br>lift=1.29","model selected 100.00% of all positives in first 83.33% sampled<br>precision=40.00% positives in sample<br>lift=1.20","model selected 100.00% of all positives in first 88.89% sampled<br>precision=37.50% positives in sample<br>lift=1.12","model selected 100.00% of all positives in first 94.44% sampled<br>precision=35.29% positives in sample<br>lift=1.06","model selected 100.00% of all positives in first 100.00% sampled<br>precision=33.33% positives in sample<br>lift=1.00"],"x":[5.55555534362793,11.11111068725586,16.66666603088379,22.22222137451172,27.77777862548828,33.33333206176758,38.88888931274414,44.44444274902344,50.0,55.55555725097656,61.11111068725586,66.66666412353516,72.22222137451172,77.77777862548828,83.33333587646484,88.88888549804688,94.44444274902344,100.0],"y":[16.670000076293945,16.670000076293945,33.33000183105469,50.0,50.0,66.66999816894531,66.66999816894531,83.33000183105469,83.33000183105469,83.33000183105469,83.33000183105469,83.33000183105469,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"text","name":"random","text":["random selected 5.56% of all positives in first 5.56% sampled<br>precision=33.33% positives in sample","random selected 11.11% of all positives in first 11.11% sampled<br>precision=33.33% positives in sample","random selected 16.67% of all positives in first 16.67% sampled<br>precision=33.33% positives in sample","random selected 22.22% of all positives in first 22.22% sampled<br>precision=33.33% positives in sample","random selected 27.78% of all positives in first 27.78% sampled<br>precision=33.33% positives in sample","random selected 33.33% of all positives in first 33.33% sampled<br>precision=33.33% positives in sample","random selected 38.89% of all positives in first 38.89% sampled<br>precision=33.33% positives in sample","random selected 44.44% of all positives in first 44.44% sampled<br>precision=33.33% positives in sample","random selected 50.00% of all positives in first 50.00% sampled<br>precision=33.33% positives in sample","random selected 55.56% of all positives in first 55.56% sampled<br>precision=33.33% positives in sample","random selected 61.11% of all positives in first 61.11% sampled<br>precision=33.33% positives in sample","random selected 66.67% of all positives in first 66.67% sampled<br>precision=33.33% positives in sample","random selected 72.22% of all positives in first 72.22% sampled<br>precision=33.33% positives in sample","random selected 77.78% of all positives in first 77.78% sampled<br>precision=33.33% positives in sample","random selected 83.33% of all positives in first 83.33% sampled<br>precision=33.33% positives in sample","random selected 88.89% of all positives in first 88.89% sampled<br>precision=33.33% positives in sample","random selected 94.44% of all positives in first 94.44% sampled<br>precision=33.33% positives in sample","random selected 100.00% of all positives in first 100.00% sampled<br>precision=33.33% positives in sample"],"x":[5.55555534362793,11.11111068725586,16.66666603088379,22.22222137451172,27.77777862548828,33.33333206176758,38.88888931274414,44.44444274902344,50.0,55.55555725097656,61.11111068725586,66.66666412353516,72.22222137451172,77.77777862548828,83.33333587646484,88.88888549804688,94.44444274902344,100.0],"y":[5.559999942779541,11.109999656677246,16.670000076293945,22.219999313354492,27.780000686645508,33.33000183105469,38.88999938964844,44.439998626708984,50.0,55.560001373291016,61.11000061035156,66.66999816894531,72.22000122070312,77.77999877929688,83.33000183105469,88.88999938964844,94.44000244140625,100.0],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"font":{"size":18},"text":"Lift curve","x":0.5},"xaxis":{"title":{"text":"Percentage sampled"},"spikemode":"across","range":[0,100]},"yaxis":{"title":{"text":"Percentage of positive"}},"hovermode":"x","plot_bgcolor":"#fff","legend":{"xanchor":"center","y":0.9,"x":0.1},"shapes":[{"type":"line","x0":44.44444274902344,"x1":44.44444274902344,"xref":"x","y0":0,"y1":100.0,"yref":"y"}],"annotations":[{"text":"cutoff=0.50","x":44.44444274902344,"y":5,"yref":"y"},{"align":"right","showarrow":false,"text":"Model: 5 out 8 (62.50%)","x":0.5,"xanchor":"left","xref":"paper","y":0.4,"yanchor":"top","yref":"paper"},{"align":"right","showarrow":false,"text":"Random: 2 out 8 (33.33%)","x":0.5,"xanchor":"left","xref":"paper","y":0.33,"yanchor":"top","yref":"paper"},{"align":"right","showarrow":false,"text":"Lift: 1.9","x":0.5,"xanchor":"left","xref":"paper","y":0.26,"yanchor":"top","yref":"paper"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Cumulative Precision</h3><h6 class="card-subtitle">Expected distribution for highest scores</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="30791b15-2dd2-4c19-9daf-6ff707e9655a" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("30791b15-2dd2-4c19-9daf-6ff707e9655a")) {                    Plotly.newPlot(                        "30791b15-2dd2-4c19-9daf-6ff707e9655a",                        [{"hoverinfo":"text","showlegend":false,"text":["percentage sampled = top 5.56%","percentage sampled = top 11.11%","percentage sampled = top 16.67%","percentage sampled = top 22.22%","percentage sampled = top 27.78%","percentage sampled = top 33.33%","percentage sampled = top 38.89%","percentage sampled = top 44.44%","percentage sampled = top 50.00%","percentage sampled = top 55.56%","percentage sampled = top 61.11%","percentage sampled = top 66.67%","percentage sampled = top 72.22%","percentage sampled = top 77.78%","percentage sampled = top 83.33%","percentage sampled = top 88.89%","percentage sampled = top 94.44%","percentage sampled = top 100.00%"],"x":[5.55555534362793,11.11111068725586,16.66666603088379,22.22222137451172,27.77777862548828,33.33333206176758,38.88888931274414,44.44444274902344,50.0,55.55555725097656,61.11111068725586,66.66666412353516,72.22222137451172,77.77777862548828,83.33333587646484,88.88888549804688,94.44444274902344,100.0],"y":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"type":"scatter"},{"fill":"tozeroy","hoverinfo":"text","name":"1","text":["percentage 1=100.00%","percentage 1=50.00%","percentage 1=66.67%","percentage 1=75.00%","percentage 1=60.00%","percentage 1=66.67%","percentage 1=57.14%","percentage 1=62.50%","percentage 1=55.56%","percentage 1=50.00%","percentage 1=45.45%","percentage 1=41.67%","percentage 1=46.15%","percentage 1=42.86%","percentage 1=40.00%","percentage 1=37.50%","percentage 1=35.29%","percentage 1=33.33%"],"x":[5.55555534362793,11.11111068725586,16.66666603088379,22.22222137451172,27.77777862548828,33.33333206176758,38.88888931274414,44.44444274902344,50.0,55.55555725097656,61.11111068725586,66.66666412353516,72.22222137451172,77.77777862548828,83.33333587646484,88.88888549804688,94.44444274902344,100.0],"y":[100.0,50.0,66.66666666666667,75.0,60.0,66.66666666666667,57.142857142857146,62.5,55.55555555555556,50.0,45.45454545454545,41.666666666666664,46.15384615384615,42.857142857142854,40.0,37.5,35.294117647058826,33.333333333333336],"type":"scatter"},{"fill":"tonexty","hoverinfo":"text","name":"0","text":["percentage 0=0.00%","percentage 0=50.00%","percentage 0=33.33%","percentage 0=25.00%","percentage 0=40.00%","percentage 0=33.33%","percentage 0=42.86%","percentage 0=37.50%","percentage 0=44.44%","percentage 0=50.00%","percentage 0=54.55%","percentage 0=58.33%","percentage 0=53.85%","percentage 0=57.14%","percentage 0=60.00%","percentage 0=62.50%","percentage 0=64.71%","percentage 0=66.67%"],"x":[5.55555534362793,11.11111068725586,16.66666603088379,22.22222137451172,27.77777862548828,33.33333206176758,38.88888931274414,44.44444274902344,50.0,55.55555725097656,61.11111068725586,66.66666412353516,72.22222137451172,77.77777862548828,83.33333587646484,88.88888549804688,94.44444274902344,100.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"font":{"size":18},"text":"Cumulative percentage per category<br>when sampling top X%","x":0.5},"xaxis":{"title":{"text":"Top X% model scores"},"spikemode":"across","range":[0,100],"nticks":10},"yaxis":{"title":{"text":"Cumulative precision per category"}},"hovermode":"x","plot_bgcolor":"#fff","margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab2"
+     role="tabpanel" aria-labelledby="myTab2-tab"> <div><H1>Individual Predictions</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Select Random Index</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected index: <b>None</b>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Prediction</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+no index selected
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Plot</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>no index selected</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Partial Dependence Plot</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="dba1554f-cbb2-470c-8885-c6506cdeff28" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("dba1554f-cbb2-470c-8885-c6506cdeff28")) {                    Plotly.newPlot(                        "dba1554f-cbb2-470c-8885-c6506cdeff28",                        [{"line":{"color":"grey","width":4},"mode":"lines+markers","name":"average prediction <br>for different values of <br>Glucose","x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[33.93,38.16,39.19,40.98,44.62,45.65,47.13,49.81,51.18,54.87],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[36.05082035064697,40.13504981994629,41.168221831321716,42.834267020225525,46.027618646621704,47.00572490692139,48.37142825126648,51.09894871711731,52.69849896430969,56.968700885772705],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[33.73017609119415,38.62356245517731,39.89037573337555,42.17295050621033,46.51641249656677,47.64213562011719,49.2196649312973,52.34689116477966,53.82487177848816,57.321012020111084],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[40.32605290412903,45.0991690158844,46.12479209899902,48.18800389766693,52.38314867019653,53.51511240005493,55.154311656951904,57.98041820526123,59.190285205841064,62.31468319892883],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[46.30676805973053,51.17248892784119,52.286702394485474,54.20188307762146,58.586323261260986,59.76132154464722,61.27625107765198,63.8532280921936,65.23129343986511,69.50369477272034],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[39.87833857536316,44.708144664764404,45.97426652908325,48.051753640174866,52.0368218421936,52.825987339019775,54.04555797576904,56.25109672546387,57.417118549346924,60.61362624168396],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[41.02753400802612,45.92154622077942,47.32348322868347,49.892228841781616,54.920947551727295,56.1711311340332,57.76979923248291,60.67034602165222,62.26763129234314,65.99790453910828],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[23.032332956790924,26.857557892799377,27.844521403312683,29.705095291137695,33.15470516681671,34.103211760520935,35.534173250198364,38.19665014743805,39.524877071380615,43.34553778171539],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[35.51664352416992,39.07589912414551,40.126678347587585,41.82879030704498,45.983344316482544,47.557950019836426,49.78673756122589,53.66362929344177,55.52785396575928,60.008132457733154],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[23.319849371910095,26.58785581588745,27.482932806015015,29.294297099113464,32.846441864967346,33.98962616920471,35.58048605918884,38.554006814956665,40.22270739078522,43.411171436309814],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[41.862109303474426,47.03209698200226,48.05873930454254,49.74617660045624,53.636449575424194,54.66488599777222,56.00656867027283,58.12125205993652,59.31863784790039,62.11787462234497],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[40.572547912597656,45.25381922721863,46.30900323390961,48.201337456703186,52.504026889801025,53.736281394958496,55.451732873916626,58.45649242401123,59.73915457725525,62.84855604171753],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[48.25100898742676,53.277790546417236,54.35668230056763,56.440043449401855,59.8224937915802,60.818374156951904,62.25082278251648,64.81947302818298,66.03102684020996,69.5263683795929],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[27.129366993904114,31.79284930229187,32.8576385974884,34.598925709724426,37.9781574010849,39.09507393836975,40.59060215950012,43.66554915904999,44.97212767601013,49.464043974876404],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[22.8584885597229,26.44256055355072,27.349087595939636,28.690314292907715,31.41327202320099,32.13306963443756,33.35447609424591,35.66993176937103,37.023451924324036,41.06772541999817],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[19.093506038188934,21.724936366081238,22.323130071163177,23.27786237001419,25.169062614440918,25.731149315834045,26.65485143661499,28.618064522743225,29.86609935760498,33.66840481758118],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[35.917770862579346,40.45289158821106,41.435471177101135,43.16674470901489,46.81496620178223,47.87040054798126,49.42601025104523,52.337437868118286,53.81782054901123,57.48767852783203],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[71.0,97.88888888888889,104.44444444444444,115.33333333333331,137.0,142.88888888888889,151.0,165.55555555555554,173.55555555555554,196.0],"y":[21.862463653087616,24.619875848293304,25.272196531295776,26.355919241905212,28.68255078792572,29.476353526115417,30.671986937522888,32.40397572517395,33.38123261928558,37.17152178287506],"type":"scatter"}],                        {"plot_bgcolor":"#fff","title":{"text":"pdp plot for Glucose"},"xaxis":{"title":{"text":"Glucose"}},"yaxis":{"title":{"text":"Predicted Outcome (Predicted %)"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"showlegend":false,"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Table</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>no index selected</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab3"
+     role="tabpanel" aria-labelledby="myTab3-tab"> <div><div><H1>What if...</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Select Random Index</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected index: <b>None</b>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Prediction</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Feature Input</h3><h6 class="card-subtitle">Adjust the feature values to change the prediction</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected: <b>None</b>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="Glucose">Glucose</label>
+    <input id="Glucose" type="text" value="None" name="Glucose" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="DiabetesPedigreeFunction">DiabetesPedigreeFunction</label>
+    <input id="DiabetesPedigreeFunction" type="text" value="None" name="DiabetesPedigreeFunction" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="Pregnancies">Pregnancies</label>
+    <input id="Pregnancies" type="text" value="None" name="Pregnancies" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="Insulin">Insulin</label>
+    <input id="Insulin" type="text" value="None" name="Insulin" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="Age">Age</label>
+    <input id="Age" type="text" value="None" name="Age" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="BloodPressure">BloodPressure</label>
+    <input id="BloodPressure" type="text" value="None" name="BloodPressure" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="BMI">BMI</label>
+    <input id="BMI" type="text" value="None" name="BMI" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="SkinThickness">SkinThickness</label>
+    <input id="SkinThickness" type="text" value="None" name="SkinThickness" disabled>
+</div>
+    
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Plot</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Partial Dependence Plot</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Table</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="tab-pane " id="myTab4"
+     role="tabpanel" aria-labelledby="myTab4-tab"> <div><H1>Feature Dependence</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Shap Summary</h3><h6 class="card-subtitle">Ordering features by shap value</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="da11609d-82ae-4b05-9c7d-3a48ad333c14" class="plotly-graph-div" style="height:360px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("da11609d-82ae-4b05-9c7d-3a48ad333c14")) {                    Plotly.newPlot(                        "da11609d-82ae-4b05-9c7d-3a48ad333c14",                        [{"hoverinfo":"text","orientation":"h","x":[0.0047650118394021515,0.005024504682365615,0.016559919598088012,0.019117781387172225,0.020813686833845577,0.031756330602449194,0.034831356846326086,0.049295724969771186],"y":["8. SkinThickness","7. BloodPressure","6. Insulin","5. DiabetesPedigreeFunction","4. BMI","3. Age","2. Pregnancies","1. Glucose"],"type":"bar"}],                        {"plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Average impact on predicted Outcome<br>(mean absolute SHAP value)"},"template":{"data":{"scatter":[{"type":"scatter"}]}},"yaxis":{"automargin":true},"xaxis":{"automargin":true,"title":{"text":""}},"height":360,"margin":{"b":40,"l":168,"pad":4,"r":40,"t":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Shap Dependence</h3><h6 class="card-subtitle">Relationship between feature value and SHAP value</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.17.1.min.js"></script>                <div id="43a11ce3-a1de-42b2-921a-4db044e09af0" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("43a11ce3-a1de-42b2-921a-4db044e09af0")) {                    Plotly.newPlot(                        "43a11ce3-a1de-42b2-921a-4db044e09af0",                        [{"hoverinfo":"text","marker":{"color":[9,4,1,7,7,12,0,8,1,4,7,7,1,2,4,2,2,1],"colorbar":{"title":{"text":"Pregnancies"}},"colorscale":[[0.0,"rgb(0,0,255)"],[1.0,"rgb(255,0,0)"]],"opacity":0.6,"showscale":true,"size":7},"mode":"markers","text":["None=238<br>Glucose=164<br>Pregnancies=9<br>SHAP=0.053","None=351<br>Glucose=137<br>Pregnancies=4<br>SHAP=-0.001","None=127<br>Glucose=118<br>Pregnancies=1<br>SHAP=-0.034","None=339<br>Glucose=178<br>Pregnancies=7<br>SHAP=0.075","None=223<br>Glucose=142<br>Pregnancies=7<br>SHAP=0.012","None=333<br>Glucose=106<br>Pregnancies=12<br>SHAP=-0.051","None=307<br>Glucose=137<br>Pregnancies=0<br>SHAP=-0.005","None=21<br>Glucose=99<br>Pregnancies=8<br>SHAP=-0.063","None=273<br>Glucose=71<br>Pregnancies=1<br>SHAP=-0.107","None=130<br>Glucose=173<br>Pregnancies=4<br>SHAP=0.064","None=54<br>Glucose=150<br>Pregnancies=7<br>SHAP=0.025","None=22<br>Glucose=196<br>Pregnancies=7<br>SHAP=0.105","None=153<br>Glucose=153<br>Pregnancies=1<br>SHAP=0.030","None=85<br>Glucose=110<br>Pregnancies=2<br>SHAP=-0.050","None=235<br>Glucose=171<br>Pregnancies=4<br>SHAP=0.068","None=301<br>Glucose=144<br>Pregnancies=2<br>SHAP=0.010","None=203<br>Glucose=99<br>Pregnancies=2<br>SHAP=-0.057","None=112<br>Glucose=89<br>Pregnancies=1<br>SHAP=-0.076"],"x":[164,137,118,178,142,106,137,99,71,173,150,196,153,110,171,144,99,89],"y":[0.053383663684011505,-0.0013908740468126027,-0.03408344283542304,0.07533400750881625,0.011553909110210911,-0.050867838211475815,-0.004717007596735684,-0.0631070705682591,-0.10675324756533852,0.06444528249619659,0.025316497775179123,0.10537473316053073,0.03026383087807706,-0.049740539101893584,0.0675262026400084,0.010463397474910225,-0.05711245864393219,-0.07588904615806998],"type":"scattergl"}],                        {"hovermode":"closest","paper_bgcolor":"#fff","plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Dependence plot for Glucose"},"xaxis":{"title":{"text":"Glucose"}},"yaxis":{"title":{"text":"SHAP value"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+</div>
+<script type="text/javascript">
+var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
+triggerTabList.forEach(function (triggerEl) {
+  var tabTrigger = new bootstrap.Tab(triggerEl)
+
+  triggerEl.addEventListener('click', function (event) {
+    event.preventDefault()
+    tabTrigger.show()
+    window.dispatchEvent(new Event('resize'));
+  })
+})
+</script>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+window.dispatchEvent(new Event('resize'));
+</script>
+        
+</html>
+    
